@@ -43,7 +43,8 @@ if [ -n "${WINDROSE_PLUS_RCON_PASSWORD:-}" ] && [ -f "$CFG" ]; then
     chown steam:steam "$CFG" 2>/dev/null || true
 fi
 
-if [ -f "$MARKER" ] && [ "$(cat "$MARKER")" = "$WINDROSE_PLUS_VERSION" ]; then
+BUILD_PS1="$SERVER_FILES/windrose_plus/tools/WindrosePlus-BuildPak.ps1"
+if [ -f "$MARKER" ] && [ "$(cat "$MARKER")" = "$WINDROSE_PLUS_VERSION" ] && [ -f "$BUILD_PS1" ]; then
     exit 0
 fi
 
